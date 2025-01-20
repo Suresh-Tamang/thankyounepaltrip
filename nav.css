@@ -1,0 +1,26 @@
+.bg-teal {
+    background-color: #008080;
+  }
+  
+  .text-white {
+    color: #fff !important;
+  }
+  
+  .navbar-brand span {
+    font-weight: bold;
+    color: #008080;
+  }
+  
+  .nav-link {
+    color: #008080 !important;
+  }
+  
+  .nav-link:hover {
+    text-decoration: underline;
+  }
+  
+  .dropdown-menu {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
