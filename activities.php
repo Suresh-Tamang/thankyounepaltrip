@@ -66,7 +66,7 @@
                     <span>January 24, 2025</span>
                 </div>
             </div>
-            <button class="button">View Trip</button>
+            <button class="button"><a href="viewtrip.html">View Trip</a></button>
         </div>
     </div>
     <?php } ?>

@@ -113,8 +113,12 @@
     padding: 10px 20px;
     border-radius: 4px;
     cursor: pointer;
-    text-transform: uppercase;
     font-weight: bold;
+}
+.button a{
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
 }
 .button:hover {
     background-color: #00c4b4;
