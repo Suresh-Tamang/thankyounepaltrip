@@ -26,6 +26,7 @@
 }
 .information .content-left{
     border-right: 1px solid rgb(216, 210, 210);
+    width: 500px;
 }
 .information .content-right{
  padding-left: 10px;   
