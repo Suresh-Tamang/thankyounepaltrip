@@ -64,9 +64,7 @@ body {
 }
 @media (max-width:375px){
     .footer-container{
-
         flex-direction: column;
-
     }
     .footer-column{
         width: 100%;
