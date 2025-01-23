@@ -107,6 +107,7 @@
             <ul class="dropdown-menu" aria-labelledby="activitiesDropdown">
               <li><a class="dropdown-item" href="#">Trekking</a></li>
               <li><a class="dropdown-item" href="#">Mt Climbing</a></li>
+              <li><a class="dropdown-item" href="activities">More</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">

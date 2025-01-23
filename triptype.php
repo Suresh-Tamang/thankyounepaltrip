@@ -121,7 +121,7 @@
             <div class="trip-card-body">
               <h3 class="trip-card-title">Cultural</h3>
               <p class="trip-card-text">Immerse yourself in the rich history and traditions of diverse cultures.</p>
-              <a href="#">Learn More</a>
+              <a href="activities">Learn More</a>
             </div>
           </div>
         </div>
