@@ -9,7 +9,7 @@
 <body>
     <section class="footer-section">
         <div class="footer">
-            <div class="footer-container">
+            <div class="footer-containers">
                 <div class="footer-column">
                     <h3>
                         Contact Info

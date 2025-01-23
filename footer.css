@@ -17,7 +17,7 @@ body {
     max-width: 1920px;
     margin: 0 auto;
 }
-.footer-container{
+.footer-containers{
     display: flex;
     gap: 20px;
     color: white;
@@ -29,7 +29,7 @@ body {
     font-weight: 200;
 }
 
-.footer-container a{
+.footer-containers a{
     text-decoration: none;
     color: white;
     font-weight: 500;
@@ -50,7 +50,7 @@ body {
     flex-wrap: wrap;
 }
 
-.footer-container a:hover{
+.footer-containers a:hover{
     color: rgb(134, 93, 93);
 }
 .secured-payment{
@@ -63,7 +63,7 @@ body {
     font-size: 24px;
 }
 @media (max-width:375px){
-    .footer-container{
+    .footer-containers{
         flex-direction: column;
     }
     .footer-column{
