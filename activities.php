@@ -24,7 +24,7 @@
                 </div>
                 <div class="trip-info">
                     <div class="title">
-                        <h2 style="width: 100%;">7 Days tour to Explore the Beauty of Philippines</h2>
+                        <h2 style="width: 250px;">7 Days tour to Explore the Beauty of Philippines</h2>
                     </div>
                     <div class="information">
                         <div class="content-left">
