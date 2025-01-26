@@ -2,19 +2,14 @@
 
 <head>
     <title>Tour Package</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="activities.css">
 
 </head>
 
 <body>
-<<<<<<< Updated upstream
-=======
     <?php
     include("nav.php");
     ?>
->>>>>>> Stashed changes
     <?php for( $i = 0; $i < 5; $i++) { ?>
     
     <div class="container">
@@ -76,10 +71,7 @@
         </div>
     </div>
     <?php } ?>
-<<<<<<< Updated upstream
 
-=======
-   
->>>>>>> Stashed changes
+
     </body>
     </html>

@@ -9,12 +9,9 @@
 </head>
 
 <body>
-<<<<<<< Updated upstream
-=======
     <?php
     include("nav.php");
     ?>
->>>>>>> Stashed changes
     <?php for( $i = 0; $i < 5; $i++) { ?>
     
     <div class="container">
@@ -76,10 +73,6 @@
         </div>
     </div>
     <?php } ?>
-<<<<<<< Updated upstream
 
-=======
-   
->>>>>>> Stashed changes
     </body>
     </html>

@@ -114,8 +114,14 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="tripTypesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Trip Types</a>
             <ul class="dropdown-menu" aria-labelledby="tripTypesDropdown">
+<<<<<<< Updated upstream
               <li><a class="dropdown-item" href="#">Nature Friendly</a></li>
               <li><a class="dropdown-item" href="#">Cultural</a></li>
+=======
+              <li><a class="dropdown-item" href="nature">Nature Friendly</a></li>
+              <li><a class="dropdown-item" href="cultural">Cultural</a></li>
+              <li><a class="dropdown-item" href="budget">Budget Travel</a></li>
+>>>>>>> Stashed changes
               <li><a class="dropdown-item" href="triptype">More</a></li>
             </ul>
           </li>

@@ -110,7 +110,7 @@
             <div class="trip-card-body">
               <h3 class="trip-card-title">Nature Friendly</h3>
               <p class="trip-card-text">Experience the beauty of untouched landscapes and serene environments.</p>
-              <a href="#">Learn More</a>
+              <a href="nature">Learn More</a>
             </div>
           </div>
         </div>
@@ -120,8 +120,13 @@
             <img src="culture.jpg" alt="Cultural Trip">
             <div class="trip-card-body">
               <h3 class="trip-card-title">Cultural</h3>
+<<<<<<< Updated upstream
               <p class="trip-card-text">Immerse yourself in the rich history and traditions of diverse cultures of Nepal.</p>
               <a href="activities">Learn More</a>
+=======
+              <p class="trip-card-text">Immerse yourself in the rich history and traditions of diverse cultures.</p>
+              <a href="cultural">Learn More</a>
+>>>>>>> Stashed changes
             </div>
           </div>
         </div>
@@ -132,7 +137,7 @@
             <div class="trip-card-body">
               <h3 class="trip-card-title">Budget Travel</h3>
               <p class="trip-card-text">Explore the world without breaking the bank with affordable travel options.</p>
-              <a href="#">Learn More</a>
+              <a href="budget">Learn More</a>
             </div>
           </div>
         </div>
