@@ -120,13 +120,13 @@
             <img src="culture.jpg" alt="Cultural Trip">
             <div class="trip-card-body">
               <h3 class="trip-card-title">Cultural</h3>
-<<<<<<< Updated upstream
+
               <p class="trip-card-text">Immerse yourself in the rich history and traditions of diverse cultures of Nepal.</p>
               <a href="activities">Learn More</a>
-=======
+
               <p class="trip-card-text">Immerse yourself in the rich history and traditions of diverse cultures.</p>
               <a href="cultural">Learn More</a>
->>>>>>> Stashed changes
+
             </div>
           </div>
         </div>

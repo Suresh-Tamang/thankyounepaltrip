@@ -15,7 +15,7 @@
     ?>
     <?php for ($i = 0; $i < 5; $i++) { ?>
 
-        <div class="container">
+        <div class="trip-container">
             <div class="content-section">
                 <div class="image-section">
                     <img alt="Aerial view of a beautiful beach with turquoise water and white sand, surrounded by lush green palm trees."
@@ -52,7 +52,8 @@
                         <div class="content-right">
                             <div class="discount-badge">8% Off</div>
                             <div class="price" style="margin-bottom: 5px;"><strong style="font-size: 20px;">$1,100</strong>
-                                <del style="font-size: small;">$1,200</del></div>
+                                <del style="font-size: small;">$1,200</del>
+                            </div>
                             <div class="next-departure">
                                 <li><i class="fas fa-check" style="color: #00c4b4;"></i> Jan 22</li>
                                 <li><i class="fas fa-check" style="color: #00c4b4;"></i> Jan 23</li>
@@ -70,7 +71,7 @@
                             <span>January 24, 2025</span>
                         </div>
                     </div>
-                    <button class="button"><a href="viewtrip.html">View Trip</a></button>
+                    <a href="viewtrip.html" class="button">View Trip</a>
                 </div>
             </div>
         </div>

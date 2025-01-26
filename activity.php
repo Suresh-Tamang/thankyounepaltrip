@@ -109,7 +109,7 @@
             <img src="trekking.jpg" alt="Nature Friendly Trip">
             <div class="trip-card-body">
               <h3 class="trip-card-title">Trekking </h3>
-              <p class="trip-card-text">Experience the beauty of untouched trails, majestic mountains, and serene environments.</p>
+              <p class="trip-card-text">Experience the beauty of untouched trails, majestic mountains, and serene.</p>
               <a href="#">Learn More</a>
             </div>
           </div>
