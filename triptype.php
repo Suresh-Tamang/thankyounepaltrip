@@ -124,9 +124,6 @@
               <p class="trip-card-text">Immerse yourself in the rich history and traditions of diverse cultures of Nepal.</p>
               <a href="activities">Learn More</a>
 
-              <p class="trip-card-text">Immerse yourself in the rich history and traditions of diverse cultures.</p>
-              <a href="cultural">Learn More</a>
-
             </div>
           </div>
         </div>

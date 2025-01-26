@@ -100,6 +100,7 @@
             <ul class="dropdown-menu" aria-labelledby="destinationDropdown">
               <li><a class="dropdown-item" href="#">Kathmandu</a></li>
               <li><a class="dropdown-item" href="#">Pokhara</a></li>
+              <li><a class="dropdown-item" href="#">Mustang</a></li>
               <li><a class="dropdown-item" href="destination">More</a></li>
             </ul>
           </li>
@@ -108,6 +109,7 @@
             <ul class="dropdown-menu" aria-labelledby="activitiesDropdown">
               <li><a class="dropdown-item" href="#">Trekking</a></li>
               <li><a class="dropdown-item" href="#">Tour </a></li>
+              <li><a class="dropdown-item" href="#">Hiking </a></li>
               <li><a class="dropdown-item" href="activity">More</a></li>
             </ul>
           </li>
@@ -118,7 +120,6 @@
               <li><a class="dropdown-item" href="nature">Nature Friendly</a></li>
               <li><a class="dropdown-item" href="cultural">Cultural</a></li>
               <li><a class="dropdown-item" href="budget">Budget Travel</a></li>
-
               <li><a class="dropdown-item" href="triptype">More</a></li>
             </ul>
           </li>
@@ -126,8 +127,8 @@
             <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
             <ul class="dropdown-menu" aria-labelledby="pagesDropdown">
               <li><a class="dropdown-item" href="aboutus">About Us</a></li>
-              <li><a class="dropdown-item" href="#">Our Team</a></li>
-              <li><a class="dropdown-item" href="#">FAQ'S</a></li>
+              <li><a class="dropdown-item" href="ourteam">Our Team</a></li>
+              <li><a class="dropdown-item" href="faq">FAQ'S</a></li>
             </ul>
           </li>
           <li class="nav-item"><a class="nav-link" href="contactus">Contact</a></li>
