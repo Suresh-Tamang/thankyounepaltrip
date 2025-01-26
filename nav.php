@@ -100,14 +100,15 @@
             <ul class="dropdown-menu" aria-labelledby="destinationDropdown">
               <li><a class="dropdown-item" href="#">Kathmandu</a></li>
               <li><a class="dropdown-item" href="#">Pokhara</a></li>
+              <li><a class="dropdown-item" href="destination">More</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="activitiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Activities</a>
             <ul class="dropdown-menu" aria-labelledby="activitiesDropdown">
               <li><a class="dropdown-item" href="#">Trekking</a></li>
-              <li><a class="dropdown-item" href="#">Mt Climbing</a></li>
-              <li><a class="dropdown-item" href="activities">More</a></li>
+              <li><a class="dropdown-item" href="#">Tour </a></li>
+              <li><a class="dropdown-item" href="activity">More</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
@@ -115,7 +116,6 @@
             <ul class="dropdown-menu" aria-labelledby="tripTypesDropdown">
               <li><a class="dropdown-item" href="#">Nature Friendly</a></li>
               <li><a class="dropdown-item" href="#">Cultural</a></li>
-              <li><a class="dropdown-item" href="#">Budget Travel</a></li>
               <li><a class="dropdown-item" href="triptype">More</a></li>
             </ul>
           </li>
