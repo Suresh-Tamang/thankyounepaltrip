@@ -109,7 +109,7 @@
             <img src="budget.jpg" alt="Nature Friendly Trip">
             <div class="trip-card-body">
               <h3 class="trip-card-title">Kathmandu</h3>
-              <p class="trip-card-text">Explore ancient temples, bustling markets, and affordable stays in Nepal’s vibrant capital without breaking the bank.</p>
+              <p class="trip-card-text">Explore ancient temples, bustling markets, and affordable stays in Nepal’s vibrant capital.</p>
               <a href="#">Learn More</a>
             </div>
           </div>
@@ -120,7 +120,7 @@
             <img src="pokhara.jpg" alt="Cultural Trip">
             <div class="trip-card-body">
               <h3 class="trip-card-title">Pokhara</h3>
-              <p class="trip-card-text">Enjoy serene lakes, mountain views, and budget-friendly homestays in this peaceful lakeside city.</p>
+              <p class="trip-card-text">Enjoy serene lakes, mountain views,and budget-friendly homestays in this peaceful lakeside city.</p>
               <a href="#">Learn More</a>
             </div>
           </div>
@@ -131,7 +131,7 @@
             <img src="lumbini.jpg" alt="Budget Travel">
             <div class="trip-card-body">
               <h3 class="trip-card-title">Lumbini</h3>
-              <p class="trip-card-text">Discover Buddha’s birthplace, tranquil monasteries, and low-cost accommodations in this spiritual haven.</p>
+              <p class="trip-card-text">Discover Buddha’s birthplace, serene monasteries, and budget stays in Lumbini, Nepal. </p>
               <a href="#">Learn More</a>
             </div>
           </div>
@@ -163,7 +163,7 @@
             <img src="solukhumbu.jpg" alt="Budget Travel">
             <div class="trip-card-body">
               <h3 class="trip-card-title">Solukhumbu</h3>
-              <p class="trip-card-text">Trek to Everest trails, stay in budget teahouses, and soak in epic mountain views without overspending.</p>
+              <p class="trip-card-text">Trek to Everest trails, stay in budget teahouses, and soak in epic mountain views.</p>
               <a href="#">Learn More</a>
             </div>
           </div>

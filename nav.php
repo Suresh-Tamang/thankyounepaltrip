@@ -68,19 +68,32 @@
 </head>
 <body>
   <!-- Top Header -->
-  <div class="bg-teal text-white py-2 fixed-top top-header" id="topHeader">
-    <div class="container d-flex justify-content-between align-items-center">
-      <div class="d-flex align-items-center">
-        <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
-        <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
-      </div>
-      <div class="d-flex align-items-center">
-        <span class="me-3"><i class="bi bi-telephone"></i> 01 2345 65486</span>
-        <span><i class="bi bi-envelope"></i> contact@yourdomain.com</span>
-      </div>
+ <!-- Top Header -->
+<div class="bg-teal text-white py-2 fixed-top top-header" id="topHeader">
+  <div class="container d-flex justify-content-between align-items-center">
+    <!-- Social Media Icons -->
+    <div class="d-flex align-items-center">
+      <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+      <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+      <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+    </div>
+
+    <!-- Contact Information -->
+    <div class="d-flex align-items-center">
+      <!-- Phone Number -->
+      <span class="me-3">
+        <i class="bi bi-telephone"></i>
+        <span class="d-none d-lg-inline">01 2345 65486</span>
+      </span>
+
+      <!-- Email -->
+      <span>
+        <i class="bi bi-envelope"></i>
+        <span class="d-none d-lg-inline">contact@yourdomain.com</span>
+      </span>
     </div>
   </div>
+</div>
 
   <!-- Main Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top" id="mainNavbar">
