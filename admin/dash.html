@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+  <div>
+    <!-- Navbar -->
+    <nav class="bg-green-500">
+      <div class="container mx-auto flex justify-between items-center py-4">
+        <div class="flex items-center">
+          <!-- Navbar Toggler -->
+          <button id="sidebarToggle" class="text-white focus:outline-none ml-2 mr-4">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+          <a href="#" class="text-2xl font-bold font-sans tracking-tighter text-white">Admin Dashboard</a>
+        </div>
+        <div class="flex items-center space-x-4 mr-2">
+          <a href="#" class="font-semibold text-lg text-white">About</a>
+          <a href="#" class="font-semibold text-lg text-white">Contact</a>
+          <div class="relative">
+            <button id="profileToggle" class="focus:outline-none">
+              <img src="https://static.vecteezy.com/system/resources/previews/019/194/935/non_2x/global-admin-icon-color-outline-vector.jpg" alt="Admin Profile" class="w-10 h-10 rounded-full border-2 border-white">
+            </button>
+            <!-- Dropdown Menu -->
+            <div id="profileDropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2">
+              <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Profile</a>
+              <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Settings</a>
+              <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Logout</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="bg-gray-800 text-white w-56 space-y-6 py-7 px-2 fixed h-full transform -translate-x-full transition-transform duration-300 ease-in-out">
+      <nav>
+        <a href="#" class="block py-2.5 px-4 rounded hover:bg-gray-700">Users</a>
+        <a href="#" class="block py-2.5 px-4 rounded hover:bg-gray-700">Bookings</a>
+        <a href="#" class="block py-2.5 px-4 rounded hover:bg-gray-700">Destinations</a>
+        <a href="#" class="block py-2.5 px-4 rounded hover:bg-gray-700">Settings</a>
+        <a href="#" class="block py-2.5 px-4 rounded hover:bg-gray-700">Reports</a>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div id="mainContent" class="ml-0 transition-all duration-300 ease-in-out">
+      <div class="p-6">
+        <h1 class="text-3xl font-bold">Welcome to the Admin Dashboard</h1>
+        <p class="mt-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita ipsa molestias pariatur fugit quae, totam voluptates, cumque, possimus est animi magnam a consectetur aliquid tempore minima nihil quis quibusdam alias!</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+     document.addEventListener('DOMContentLoaded', function () {
+      const sidebar = document.getElementById('sidebar');
+      const sidebarToggle = document.getElementById('sidebarToggle');
+      const mainContent = document.getElementById('mainContent');
+
+      sidebarToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('-translate-x-full');
+        mainContent.classList.toggle('ml-64');
+      });
+
+      // JavaScript to toggle the profile dropdown
+      const profileToggle = document.getElementById('profileToggle');
+      const profileDropdown = document.getElementById('profileDropdown');
+
+      profileToggle.addEventListener('click', () => {
+        profileDropdown.classList.toggle('hidden');
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener('click', (event) => {
+        if (!profileToggle.contains(event.target) && !profileDropdown.contains(event.target)) {
+          profileDropdown.classList.add('hidden');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
