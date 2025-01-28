@@ -68,19 +68,32 @@
 </head>
 <body>
   <!-- Top Header -->
-  <div class="bg-teal text-white py-2 fixed-top top-header" id="topHeader">
-    <div class="container d-flex justify-content-between align-items-center">
-      <div class="d-flex align-items-center">
-        <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
-        <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
-      </div>
-      <div class="d-flex align-items-center">
-        <span class="me-3"><i class="bi bi-telephone"></i> 01 2345 65486</span>
-        <span><i class="bi bi-envelope"></i> contact@yourdomain.com</span>
-      </div>
+ <!-- Top Header -->
+<div class="bg-teal text-white py-2 fixed-top top-header" id="topHeader">
+  <div class="container d-flex justify-content-between align-items-center">
+    <!-- Social Media Icons -->
+    <div class="d-flex align-items-center">
+      <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+      <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+      <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+    </div>
+
+    <!-- Contact Information -->
+    <div class="d-flex align-items-center">
+      <!-- Phone Number -->
+      <span class="me-3">
+        <i class="bi bi-telephone"></i>
+        <span class="d-none d-lg-inline">01 2345 65486</span>
+      </span>
+
+      <!-- Email -->
+      <span>
+        <i class="bi bi-envelope"></i>
+        <span class="d-none d-lg-inline">contact@yourdomain.com</span>
+      </span>
     </div>
   </div>
+</div>
 
   <!-- Main Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top" id="mainNavbar">
@@ -100,22 +113,26 @@
             <ul class="dropdown-menu" aria-labelledby="destinationDropdown">
               <li><a class="dropdown-item" href="#">Kathmandu</a></li>
               <li><a class="dropdown-item" href="#">Pokhara</a></li>
+              <li><a class="dropdown-item" href="#">Mustang</a></li>
+              <li><a class="dropdown-item" href="destination">More</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="activitiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Activities</a>
             <ul class="dropdown-menu" aria-labelledby="activitiesDropdown">
               <li><a class="dropdown-item" href="#">Trekking</a></li>
-              <li><a class="dropdown-item" href="#">Mt Climbing</a></li>
-              <li><a class="dropdown-item" href="activities">More</a></li>
+              <li><a class="dropdown-item" href="#">Tour </a></li>
+              <li><a class="dropdown-item" href="#">Hiking </a></li>
+              <li><a class="dropdown-item" href="activity">More</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="tripTypesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Trip Types</a>
             <ul class="dropdown-menu" aria-labelledby="tripTypesDropdown">
-              <li><a class="dropdown-item" href="#">Nature Friendly</a></li>
-              <li><a class="dropdown-item" href="#">Cultural</a></li>
-              <li><a class="dropdown-item" href="#">Budget Travel</a></li>
+
+              <li><a class="dropdown-item" href="nature">Nature Friendly</a></li>
+              <li><a class="dropdown-item" href="cultural">Cultural</a></li>
+              <li><a class="dropdown-item" href="budget">Budget Travel</a></li>
               <li><a class="dropdown-item" href="triptype">More</a></li>
             </ul>
           </li>
@@ -123,8 +140,8 @@
             <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
             <ul class="dropdown-menu" aria-labelledby="pagesDropdown">
               <li><a class="dropdown-item" href="aboutus">About Us</a></li>
-              <li><a class="dropdown-item" href="#">Our Team</a></li>
-              <li><a class="dropdown-item" href="#">FAQ'S</a></li>
+              <li><a class="dropdown-item" href="ourteam">Our Team</a></li>
+              <li><a class="dropdown-item" href="faq">FAQ'S</a></li>
             </ul>
           </li>
           <li class="nav-item"><a class="nav-link" href="contactus">Contact</a></li>

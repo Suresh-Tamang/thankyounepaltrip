@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trip Types</title>
+  <title>Activities</title>
   <style>
     body {
       font-family: 'Roboto', sans-serif;
@@ -12,18 +12,18 @@
       padding: 0;
     }
 
-    .trip-types {
+    .activities {
       padding: 60px 15px;
       text-align: center;
     }
 
-    .trip-types h1 {
+    .activities h1 {
       font-size: 2.5rem;
       color: #17252a;
       margin-bottom: 20px;
     }
 
-    .trip-types p {
+    .activities p {
       color: #3aafa9;
       font-size: 1.2rem;
       margin-bottom: 40px;
@@ -75,7 +75,7 @@
     }
 
     .hero {
-    background: url('contact.jpg') no-repeat center center/cover;
+    background: url('manaslu.jpg') no-repeat center center/cover;
     color: white;
     text-align: center;
     padding: 80px 20px;
@@ -95,22 +95,22 @@
     ?>
 
     <header class="hero">
-      <h1>Trip Types</h1>
+      <h1>Activities</h1>
   </header>
 
-  <div class="trip-types">
-    <h1>Explore by Trip Types</h1>
+  <div class="activities">
+    <h1>Explore by Activities</h1>
     <p>Discover the best travel experiences tailored to your interests.</p>
     <div class="container">
       <div class="row g-4">
         <!-- Card 1 -->
         <div class="col-md-4">
           <div class="trip-card">
-            <img src="nature.jpg" alt="Nature Friendly Trip">
+            <img src="trekking.jpg" alt="Nature Friendly Trip">
             <div class="trip-card-body">
-              <h3 class="trip-card-title">Nature Friendly</h3>
-              <p class="trip-card-text">Experience the beauty of untouched landscapes and serene environments.</p>
-              <a href="nature">Learn More</a>
+              <h3 class="trip-card-title">Trekking </h3>
+              <p class="trip-card-text">Experience the beauty of untouched trails, majestic mountains, and serene.</p>
+              <a href="#">Learn More</a>
             </div>
           </div>
         </div>
@@ -119,22 +119,20 @@
           <div class="trip-card">
             <img src="culture.jpg" alt="Cultural Trip">
             <div class="trip-card-body">
-              <h3 class="trip-card-title">Cultural</h3>
-
+              <h3 class="trip-card-title">Tour</h3>
               <p class="trip-card-text">Immerse yourself in the rich history and traditions of diverse cultures of Nepal.</p>
               <a href="activities">Learn More</a>
-
             </div>
           </div>
         </div>
         <!-- Card 3 -->
         <div class="col-md-4">
           <div class="trip-card">
-            <img src="budget.jpg" alt="Budget Travel">
+            <img src="rafting.jpg" alt="Budget Travel">
             <div class="trip-card-body">
-              <h3 class="trip-card-title">Budget Travel</h3>
-              <p class="trip-card-text">Explore the world without breaking the bank with affordable travel options.</p>
-              <a href="budget">Learn More</a>
+              <h3 class="trip-card-title"> Rafting</h3>
+              <p class="trip-card-text">Feel the thrill of conquering roaring rivers surrounded by stunning natural scenery.</p>
+              <a href="#">Learn More</a>
             </div>
           </div>
         </div>

@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+.container{
+    max-width: 100%;
+    height: max-content;
+    align-items: center;
+    margin: 0 auto;
+    transition: box-shadow 0.3s ease;
+    border-radius: 5px;
+=======
 .trip-container {
   max-width: 1000px;
   height: max-content;
@@ -5,6 +14,7 @@
   margin: 0 auto;
   transition: box-shadow 0.3s ease;
   border-radius: 5px;
+>>>>>>> dc6b8ef1de1bb97c8f79b9e9489d6c1744ca2df9
 }
 .trip-container:hover {
   box-shadow: 0 4px 20px rgba(171, 169, 169, 0.5);

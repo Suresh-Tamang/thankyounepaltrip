@@ -10,6 +10,9 @@
 </head>
 
 <body>
+    <?php
+    include("nav.php");
+    ?>
     <?php for ($i = 0; $i < 5; $i++) { ?>
 
         <div class="trip-container">
