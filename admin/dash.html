@@ -20,7 +20,7 @@
           </button>
           <a href="#" class="text-2xl font-bold font-sans tracking-tighter text-white">Admin Dashboard</a>
         </div>
-        <div class="flex items-center space-x-4 mr-2">
+        <div class="flex items-center space-x-6 mr-2">
           <a href="#" class="font-semibold text-lg text-white">About</a>
           <a href="#" class="font-semibold text-lg text-white">Contact</a>
           <div class="relative">
@@ -42,11 +42,58 @@
     <!-- Sidebar -->
     <div id="sidebar" class="bg-gray-800 text-white w-56 space-y-6 py-7 px-2 fixed h-full transform -translate-x-full transition-transform duration-300 ease-in-out">
       <nav>
-        <a href="#" class="block py-2.5 px-4 rounded hover:bg-gray-700">Users</a>
-        <a href="#" class="block py-2.5 px-4 rounded hover:bg-gray-700">Bookings</a>
-        <a href="#" class="block py-2.5 px-4 rounded hover:bg-gray-700">Destinations</a>
-        <a href="#" class="block py-2.5 px-4 rounded hover:bg-gray-700">Settings</a>
-        <a href="#" class="block py-2.5 px-4 rounded hover:bg-gray-700">Reports</a>
+        <div>
+          <button id="usersToggle" class="w-full text-left block py-2.5 px-4 rounded hover:bg-gray-700 flex justify-between items-center">
+            Users
+            <svg id="usersArrow" class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div id="usersDropdown" class="hidden pl-4 mt-2">
+            <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700">Create User</a>
+            <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700">List of Users</a>
+          </div>
+        </div>
+        <div>
+          <button id="bookingsToggle" class="w-full text-left block py-2.5 px-4 rounded hover:bg-gray-700 flex justify-between items-center">
+            Bookings
+            <svg id="bookingsArrow" class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div id="bookingsDropdown" class="hidden pl-4 mt-2">
+            <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700">All</a>
+            <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700">Approved</a>
+            <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700">Pending</a>
+            <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700">Cancelled</a>
+          </div>
+        </div>
+        <div>
+          <button id="listingsToggle" class="w-full text-left block py-2.5 px-4 rounded hover:bg-gray-700 flex justify-between items-center">
+            Listings
+            <svg id="listingsArrow" class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div id="listingsDropdown" class="hidden pl-4 mt-2">
+            <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700">Hotel Listings</a>
+            <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700">Destination Listings</a>
+            <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700">Package Listings</a>
+          </div>
+        </div>
+        <div>
+          <button id="profilesToggle" class="w-full text-left block py-2.5 px-4 rounded hover:bg-gray-700 flex justify-between items-center">
+            Profile
+            <svg id="profilesArrow" class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div id="profilesDropdown" class="hidden pl-4 mt-2">
+            <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700">View Profiles</a>
+            <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700">Edit Profiles</a>
+            <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700">Change Password</a>
+          </div>
+        </div>
       </nav>
     </div>
 
@@ -55,6 +102,36 @@
       <div class="p-6">
         <h1 class="text-3xl font-bold">Welcome to the Admin Dashboard</h1>
         <p class="mt-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita ipsa molestias pariatur fugit quae, totam voluptates, cumque, possimus est animi magnam a consectetur aliquid tempore minima nihil quis quibusdam alias!</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+          <!-- Total Bookings Card -->
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="flex items-center justify-between">
+              <div>
+                <h2 class="text-xl font-semibold text-gray-800">Total Bookings</h2>
+                <p class="text-3xl font-bold mt-2">1,234</p>
+              </div>
+              <div class="bg-green-100 p-3 rounded-full">
+                <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Total Users Card -->
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="flex items-center justify-between">
+              <div>
+                <h2 class="text-xl font-semibold text-gray-800">Total Users</h2>
+                <p class="text-3xl font-bold mt-2">567</p>
+              </div>
+              <div class="bg-blue-100 p-3 rounded-full">
+                <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
       </div>
     </div>
   </div>
@@ -83,6 +160,42 @@
         if (!profileToggle.contains(event.target) && !profileDropdown.contains(event.target)) {
           profileDropdown.classList.add('hidden');
         }
+      });
+
+      const usersToggle = document.getElementById('usersToggle');
+      const usersDropdown = document.getElementById('usersDropdown');
+      const usersArrow = document.getElementById('usersArrow');
+
+      usersToggle.addEventListener('click', () => {
+        usersDropdown.classList.toggle('hidden');
+        usersArrow.classList.toggle('rotate-180'); // Rotate the arrow
+      });
+
+      const bookingsToggle = document.getElementById('bookingsToggle');
+      const bookingsDropdown = document.getElementById('bookingsDropdown');
+      const bookingsArrow = document.getElementById('bookingsArrow');
+
+      bookingsToggle.addEventListener('click', () => {
+        bookingsDropdown.classList.toggle('hidden');
+        bookingsArrow.classList.toggle('rotate-180'); // Rotate the arrow
+      });
+
+      const listingsToggle = document.getElementById('listingsToggle');
+      const listingsDropdown = document.getElementById('listingsDropdown');
+      const listingsArrow = document.getElementById('listingsArrow');
+
+      listingsToggle.addEventListener('click', () => {
+        listingsDropdown.classList.toggle('hidden');
+        listingsArrow.classList.toggle('rotate-180'); // Rotate the arrow
+      });
+
+      const profilesToggle = document.getElementById('profilesToggle');
+      const profilesDropdown = document.getElementById('profilesDropdown');
+      const profilesArrow = document.getElementById('profilesArrow');
+
+      profilesToggle.addEventListener('click', () => {
+        profilesDropdown.classList.toggle('hidden');
+        profilesArrow.classList.toggle('rotate-180'); // Rotate the arrow
       });
     });
   </script>
