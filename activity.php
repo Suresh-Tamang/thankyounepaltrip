@@ -24,7 +24,7 @@
     }
 
     .activities p {
-      color: #3aafa9;
+      color: #008080;
       font-size: 1.2rem;
       margin-bottom: 40px;
     }
@@ -65,7 +65,7 @@
     }
 
     .trip-card a {
-      color: #3aafa9;
+      color: #008080;
       text-decoration: none;
       font-weight: bold;
     }
@@ -119,13 +119,35 @@
           <div class="trip-card">
             <img src="culture.jpg" alt="Cultural Trip">
             <div class="trip-card-body">
-              <h3 class="trip-card-title">Tour</h3>
+              <h3 class="trip-card-title">City Tour</h3>
               <p class="trip-card-text">Immerse yourself in the rich history and traditions of diverse cultures of Nepal.</p>
               <a href="activities">Learn More</a>
             </div>
           </div>
         </div>
         <!-- Card 3 -->
+        <div class="col-md-4">
+          <div class="trip-card">
+            <img src="rafting.jpg" alt="Budget Travel">
+            <div class="trip-card-body">
+              <h3 class="trip-card-title"> Rafting</h3>
+              <p class="trip-card-text">Feel the thrill of conquering roaring rivers surrounded by stunning natural scenery.</p>
+              <a href="#">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <!-- card 4 -->
+        <div class="col-md-4">
+          <div class="trip-card">
+            <img src="rafting.jpg" alt="Budget Travel">
+            <div class="trip-card-body">
+              <h3 class="trip-card-title"> Jungle safari</h3>
+              <p class="trip-card-text">Feel the thrill of conquering roaring rivers surrounded by stunning natural scenery.</p>
+              <a href="#">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <!-- card 5 -->
         <div class="col-md-4">
           <div class="trip-card">
             <img src="rafting.jpg" alt="Budget Travel">
