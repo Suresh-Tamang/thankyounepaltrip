@@ -18,7 +18,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
           </button>
-          <a href="/" class="text-2xl font-bold font-sans tracking-tighter text-white">Admin Dashboard</a>
+          <a href="dash.html" class="text-2xl font-bold font-sans tracking-tighter text-white">Admin Dashboard</a>
         </div>
         <div class="flex items-center space-x-6 mr-2">
           <a href="#" class="font-semibold text-lg text-white">About</a>
@@ -50,8 +50,8 @@
             </svg>
           </button>
           <div id="usersDropdown" class="hidden pl-4 mt-2">
-            <a href="createUser.html" class="block py-2 px-4 rounded hover:bg-gray-700">Create User</a>
-            <a href="manageUser.html" class="block py-2 px-4 rounded hover:bg-gray-700">List of Users</a>
+            <a href="createUser.html" data-page="createUser.html" class="block py-2 px-4 rounded hover:bg-gray-700">Create User</a>
+            <a href="manageUser.html" data-page="manageUser.html" class="block py-2 px-4 rounded hover:bg-gray-700">List of Users</a>
           </div>
         </div>
         <div>
@@ -62,23 +62,25 @@
             </svg>
           </button>
           <div id="bookingsDropdown" class="hidden pl-4 mt-2">
-            <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700">All</a>
-            <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700">Approved</a>
-            <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700">Pending</a>
-            <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700">Cancelled</a>
+            <a href="viewBooking.html" data-page="viewBooking.html" class="block py-2 px-4 rounded hover:bg-gray-700">All</a>
+            <a href="approved.html" data-page="approved.html" class="block py-2 px-4 rounded hover:bg-gray-700">Approved</a>
+            <a href="pending.html" data-page="pending.html" class="block py-2 px-4 rounded hover:bg-gray-700">Pending</a>
+            <a href="cancelled.html" data-page="cancelled.html" class="block py-2 px-4 rounded hover:bg-gray-700">Cancelled</a>
           </div>
         </div>
         <div>
           <button id="listingsToggle" class="w-full text-left block py-2.5 px-4 rounded hover:bg-gray-700 flex justify-between items-center">
-            Listings
+            Activities
             <svg id="listingsArrow" class="w-4 h-4 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
           </button>
           <div id="listingsDropdown" class="hidden pl-4 mt-2">
-            <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700">Hotel Listings</a>
-            <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700">Destination Listings</a>
-            <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700">Package Listings</a>
+            <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700">All Activities</a>
+            <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700">Create</a>
+            <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700">Active</a>
+            <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700">Drafts</a>
+            <a href="#" class="block py-2 px-4 rounded hover:bg-gray-700">Expired</a>
           </div>
         </div>
         <div>
@@ -102,9 +104,9 @@
       <div class="p-6">
         <h1 class="text-3xl font-bold">Welcome to the Admin Dashboard</h1>
         <p class="mt-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita ipsa molestias pariatur fugit quae, totam voluptates, cumque, possimus est animi magnam a consectetur aliquid tempore minima nihil quis quibusdam alias!</p>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+        <div id="default-content" class="container grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
           <!-- Total Bookings Card -->
-          <div class="bg-white p-6 rounded-lg shadow-md">
+          <div  class=" bg-white p-6 rounded-lg shadow-md">
             <div class="flex items-center justify-between">
               <div>
                 <h2 class="text-xl font-semibold text-gray-800">Total Bookings</h2>
@@ -140,11 +142,11 @@
      document.addEventListener('DOMContentLoaded', function () {
       const sidebar = document.getElementById('sidebar');
       const sidebarToggle = document.getElementById('sidebarToggle');
-      const mainContent = document.getElementById('mainContent');
+      const content = document.getElementById('mainContent');
 
       sidebarToggle.addEventListener('click', () => {
         sidebar.classList.toggle('-translate-x-full');
-        mainContent.classList.toggle('ml-64');
+        content.classList.toggle('ml-64');
       });
 
       // JavaScript to toggle the profile dropdown
@@ -197,6 +199,69 @@
         profilesDropdown.classList.toggle('hidden');
         profilesArrow.classList.toggle('rotate-180'); // Rotate the arrow
       });
+
+         // Load Content Dynamically
+      const loadContent = async (page) => {
+        const response = await fetch(page);
+        const html = await response.text();
+        content.innerHTML = html;
+
+        // Initialize scripts for the loaded content
+        if (page === 'manageUser.html','viewBooking.html','approved.html','pending.html','cancelled.html') {
+          initializeSearch();
+        }
+        };
+
+            // Add Event Listeners to Sidebar Links
+       const sidebarLinks = document.querySelectorAll('#sidebar a[data-page]');
+        sidebarLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const page = link.getAttribute('data-page');
+          loadContent(page);
+          history.pushState(null, null, page); // Update URL
+        });
+      });
+
+
+      // Handle Browser Back/Forward
+      window.addEventListener('popstate', () => {
+        const page = window.location.pathname.split('/').pop() || 'admin/dash.html';
+        loadContent(page);
+      });
+
+      const initializeSearch = () => {
+        const searchInput = document.getElementById('searchInput');
+        const tableRows = document.querySelectorAll('tbody tr');
+
+        if (searchInput && tableRows.length > 0) {
+          searchInput.addEventListener('input', () => {
+            const searchTerm = searchInput.value.toLowerCase();
+
+            tableRows.forEach(row => {
+              const rowText = row.textContent.toLowerCase();
+              if (rowText.includes(searchTerm)) {
+                row.style.display = '';
+              } else {
+                row.style.display = 'none';
+              }
+            });
+          });
+        } else {
+          console.error("Search elements not found!");
+        }
+      };
+      
+      document.getElementById('mainContent').addEventListener('click', (e) => {
+        const button = e.target.closest('[data-page]');
+        if (button) {
+          e.preventDefault();
+          const page = button.getAttribute('data-page');
+          loadContent(page); // Load the page dynamically
+          history.pushState(null, null, page); // Update URL
+        }
+       });
+
     });
   </script>
 </body>
