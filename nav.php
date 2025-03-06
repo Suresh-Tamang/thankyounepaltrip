@@ -68,6 +68,7 @@
 </head>
 <body>
 
+
  <!-- Top Header -->
 <div class="bg-teal text-white py-2 fixed-top top-header" id="topHeader">
   <div class="container d-flex justify-content-between align-items-center">
@@ -147,9 +148,27 @@
           <li class="nav-item"><a class="nav-link" href="contactus">Contact</a></li>
         </ul>
         <div class="d-flex">
-          <a href="login" class="nav-link">Login</a>|
-          <a href="signup" class="nav-link">Sign Up</a>
-        </div>
+        <?php
+          include 'connection.php';
+          ?>
+          <?php
+          // Start the session if not already started
+          if (session_status() == PHP_SESSION_NONE) {
+          }
+
+          // Check if the user is logged in
+          if (isset($_SESSION['user_name'])) {
+              // If logged in, display Profile and Logout
+              echo '<a class="nav-link" href="profile.php"><b>Profile</b></a>';
+              echo '<a class="nav-link" href="logout.php"><b>Logout</b></a>';
+          } else {
+              // If not logged in, display Login and Sign Up
+              echo '<a href="login.php" class="nav-link">Login</a> | 
+                    <a href="signup.php" class="nav-link">Sign Up</a>';
+          }
+          ?>
+      </div>
+
       </div>
     </div>
   </nav>

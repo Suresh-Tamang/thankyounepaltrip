@@ -3,11 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Admin Profile - Travel Monster</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-
+    <style>
+        .profile-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            text-align: center;
+        }
+        .profile-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .stats-card {
+            background-color: #ecf0f1;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .stats-card h3 {
+            font-size: 1.25rem;
+        }
+    </style>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
@@ -21,8 +45,8 @@
     </script>
 </head>
 <body class="bg-gray-100 font-sans leading-normal tracking-normal">
-        <div class="flex h-screen">
-        <!-- Sidebar -->
+    <div class="flex h-screen">
+       <!-- Sidebar -->
         <aside class="bg-white w-64 shadow-lg fixed h-full overflow-y-auto">
             <div class="p-4 border-b">
                 <h1 class="text-xl font-bold">THANKYOUNEPALTRIP</h1>
@@ -116,7 +140,7 @@
                 </ul>
             </nav>
         </aside>
-
+        
         <!-- Navbar -->
         <div class="fixed top-0 left-64 w-[calc(100%-16rem)] bg-white shadow-md p-4 flex justify-between items-center z-10">
             <h1 class="text-2xl font-bold">Admin Panel</h1>
@@ -135,82 +159,36 @@
                 </a>
             </div>
         </div>
-        
+
         <!-- Main Content -->
-        <div class="ml-64 p-6 w-full">
-            <div class="bg-white shadow-md rounded-lg p-6">
-                <h1 class="text-2xl font-bold mb-4"><br></h1>
-                <div class="bg-gray-100 p-4 rounded-lg mb-6">
-                    <form>
-                        <div class="flex flex-wrap justify-between mb-4">
-            <button class="bg-red-500 text-white px-4 py-2 rounded mb-2 sm:mb-0">Compose</button>
-            <div class="flex flex-wrap space-x-2">
-                <a href="your-link-here" class="bg-gray-300 text-black px-4 py-2 rounded mb-2 sm:mb-0 inline-block">
-                    Inbox
-                </a>
-                <a href="your-link-here" class="bg-gray-300 text-black px-4 py-2 rounded mb-2 sm:mb-0 inline-block">
-                    Sent
-                </a>
-                <a href="your-link-here" class="bg-gray-300 text-black px-4 py-2 rounded mb-2 sm:mb-0 inline-block">
-                    Important
-                </a>
-                <a href="your-link-here" class="bg-gray-300 text-black px-4 py-2 rounded mb-2 sm:mb-0 inline-block">
-                    starred
-                </a>
-                <a href="your-link-here" class="bg-gray-300 text-black px-4 py-2 rounded mb-2 sm:mb-0 inline-block">
-                    Draft
-                </a>
-                <a href="your-link-here" class="bg-gray-300 text-black px-4 py-2 rounded mb-2 sm:mb-0 inline-block">
-                    Trash
-                </a>
-            </div>
-        </div>
-        <div class="space-y-4">
-            <div>
-                <label class="block text-gray-700">To:</label>
-                <input type="text" class="w-full px-4 py-2 border rounded" />
-            </div>
-            <div>
-                <label class="block text-gray-700">Subject:</label>
-                <input type="text" class="w-full px-4 py-2 border rounded" />
-            </div>
-            <div>
-                <label class="block text-gray-700">Paragraph</label>
-                <div class="border rounded p-2">
-                    <div id="toolbar">
-                        <button class="ql-bold"></button>
-                        <button class="ql-italic"></button>
-                        <button class="ql-underline"></button>
-                        <button class="ql-list" value="bullet"></button>
-                        <button class="ql-list" value="ordered"></button>
-                        <button class="ql-link"></button>
-                        <button class="ql-image"></button>
-                        <button class="ql-table"></button>
-                        <button class="ql-undo"></button>
-                        <button class="ql-redo"></button>
-                    </div>
-                    <div id="editor" class="h-32"></div>
+        <div class="w-3/4 p-6 ml-64"><br><br>
+            <!-- Profile Section -->
+            <div class="profile-card mb-6">
+                <img src="https://via.placeholder.com/150" alt="Admin Avatar">
+                <h2 class="text-2xl font-semibold mt-4">John Doe</h2>
+                <p class="text-gray-500">Admin</p>
+                <div class="flex justify-center mt-4">
+                    <button class="bg-blue-500 text-white p-2 rounded hover:bg-blue-600 mx-2">Edit Profile</button>
+                    <button class="bg-red-500 text-white p-2 rounded hover:bg-red-600 mx-2">Change Password</button>
                 </div>
             </div>
-            <div class="flex flex-wrap space-x-2">
-                <button type="submit" class="bg-[#008080] text-white px-4 py-2 rounded">Send </button>
-                <button type="submit" class="bg-[red] text-white px-4 py-2 rounded">Discard </button>
-                <button type="submit" class="bg-[Gray] text-white px-4 py-2 rounded">Draft </button>
-            </div>
-        </div>
-                    </form>
+
+            <!-- Stats Section -->
+            <div class="grid grid-cols-3 gap-6">
+                <div class="stats-card">
+                    <h3>Total Users</h3>
+                    <p class="text-2xl font-bold">1,245</p>
+                </div>
+                <div class="stats-card">
+                    <h3>Active Users</h3>
+                    <p class="text-2xl font-bold">1,120</p>
+                </div>
+                <div class="stats-card">
+                    <h3>Pending Requests</h3>
+                    <p class="text-2xl font-bold">52</p>
                 </div>
             </div>
         </div>
     </div>
- <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-    <script>
-        var quill = new Quill('#editor', {
-            theme: 'snow',
-            modules: {
-                toolbar: '#toolbar'
-            }
-        });
-    </script>
 </body>
 </html>

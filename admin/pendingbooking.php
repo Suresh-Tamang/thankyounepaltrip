@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,8 +7,111 @@
     <title>Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <style>
+    /* Hide additional columns on smaller screens */
+    @media (max-width: 768px) {
+      .hidden-on-mobile {
+        display: none;
+      }
+      .expand-button {
+        display: inline-block;
+      }
+    }
 
+    .expand-button {
+      display: none;
+      cursor: pointer;
+      color: #4F46E5; /* Tailwind's indigo-600 */
+    }
+  </style>
+  <script>
+    // Function to fetch data from the backend
+    async function fetchData() {
+      try {
+        const response = await fetch('/api/users'); // Replace with your backend API endpoint
+        if (!response.ok) {
+          throw new Error('Failed to fetch data');
+        }
+        const data = await response.json();
+        populateTable(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    }
+
+    // Function to populate the table with data
+    function populateTable(data) {
+      const tbody = document.querySelector('tbody');
+      tbody.innerHTML = ''; // Clear existing rows
+
+      data.forEach((user, index) => {
+        const row = `
+          <tr class="border-b border-gray-200 hover:bg-gray-100">
+            <td class="py-3 px-6 text-left">${user.id}</td>
+            <td class="py-3 px-6 text-left">${user.firstName}</td>
+            <td class="py-3 px-6 text-left">${user.lastName}</td>
+            <td class="py-3 px-6 text-left hidden-on-mobile">${user.username}</td>
+            <td class="py-3 px-6 text-left hidden-on-mobile">${user.email}</td>
+            <td class="py-3 px-6 text-left hidden-on-mobile">${user.phone}</td>
+            <td class="py-3 px-6 text-left hidden-on-mobile">
+              <span class="${getStatusClass(user.status)} py-1 px-3 rounded-full text-xs">
+                ${user.status}
+              </span>
+            </td>
+            <td class="py-3 px-6 text-left hidden-on-mobile">
+              <div class="flex item-center justify-center">
+                <button class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                  <i class="fas fa-edit"></i>
+                </button>
+                <button class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
+                  <i class="fas fa-trash-alt"></i>
+                </button>
+              </div>
+            </td>
+            <td class="py-3 px-6 text-left">
+              <span class="expand-button" onclick="toggleDetails(this)">+</span>
+            </td>
+          </tr>
+        `;
+        tbody.insertAdjacentHTML('beforeend', row);
+      });
+    }
+
+    // Helper function to get status class based on status
+    function getStatusClass(status) {
+      switch (status.toLowerCase()) {
+        case 'active':
+          return 'bg-green-200 text-green-600';
+        case 'expired':
+          return 'bg-red-200 text-red-600';
+        case 'draft':
+          return 'bg-yellow-200 text-yellow-600';
+        case 'featured':
+          return 'bg-orange-200 text-orange-600';
+        default:
+          return 'bg-gray-200 text-gray-600';
+      }
+    }
+
+    // Function to toggle additional details on smaller screens
+    function toggleDetails(button) {
+      const row = button.closest('tr');
+      const hiddenColumns = row.querySelectorAll('.hidden-on-mobile');
+
+      hiddenColumns.forEach((column) => {
+        if (column.style.display === 'none' || column.style.display === '') {
+          column.style.display = 'table-cell';
+          button.textContent = '-';
+        } else {
+          column.style.display = 'none';
+          button.textContent = '+';
+        }
+      });
+    }
+
+    // Fetch data when the page loads
+    document.addEventListener('DOMContentLoaded', fetchData);
+  </script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
@@ -21,7 +125,7 @@
     </script>
 </head>
 <body class="bg-gray-100 font-sans leading-normal tracking-normal">
-        <div class="flex h-screen">
+    <div class="flex h-screen">
         <!-- Sidebar -->
         <aside class="bg-white w-64 shadow-lg fixed h-full overflow-y-auto">
             <div class="p-4 border-b">
@@ -116,7 +220,7 @@
                 </ul>
             </nav>
         </aside>
-
+        
         <!-- Navbar -->
         <div class="fixed top-0 left-64 w-[calc(100%-16rem)] bg-white shadow-md p-4 flex justify-between items-center z-10">
             <h1 class="text-2xl font-bold">Admin Panel</h1>
@@ -135,82 +239,58 @@
                 </a>
             </div>
         </div>
-        
+
         <!-- Main Content -->
-        <div class="ml-64 p-6 w-full">
+        <div class="ml-64 p-6 w-[84%] mx-auto">
             <div class="bg-white shadow-md rounded-lg p-6">
                 <h1 class="text-2xl font-bold mb-4"><br></h1>
                 <div class="bg-gray-100 p-4 rounded-lg mb-6">
+                    <h2 class="text-xl font-semibold mb-4">All Booking</h2>
                     <form>
-                        <div class="flex flex-wrap justify-between mb-4">
-            <button class="bg-red-500 text-white px-4 py-2 rounded mb-2 sm:mb-0">Compose</button>
-            <div class="flex flex-wrap space-x-2">
-                <a href="your-link-here" class="bg-gray-300 text-black px-4 py-2 rounded mb-2 sm:mb-0 inline-block">
-                    Inbox
-                </a>
-                <a href="your-link-here" class="bg-gray-300 text-black px-4 py-2 rounded mb-2 sm:mb-0 inline-block">
-                    Sent
-                </a>
-                <a href="your-link-here" class="bg-gray-300 text-black px-4 py-2 rounded mb-2 sm:mb-0 inline-block">
-                    Important
-                </a>
-                <a href="your-link-here" class="bg-gray-300 text-black px-4 py-2 rounded mb-2 sm:mb-0 inline-block">
-                    starred
-                </a>
-                <a href="your-link-here" class="bg-gray-300 text-black px-4 py-2 rounded mb-2 sm:mb-0 inline-block">
-                    Draft
-                </a>
-                <a href="your-link-here" class="bg-gray-300 text-black px-4 py-2 rounded mb-2 sm:mb-0 inline-block">
-                    Trash
-                </a>
-            </div>
-        </div>
-        <div class="space-y-4">
-            <div>
-                <label class="block text-gray-700">To:</label>
-                <input type="text" class="w-full px-4 py-2 border rounded" />
-            </div>
-            <div>
-                <label class="block text-gray-700">Subject:</label>
-                <input type="text" class="w-full px-4 py-2 border rounded" />
-            </div>
-            <div>
-                <label class="block text-gray-700">Paragraph</label>
-                <div class="border rounded p-2">
-                    <div id="toolbar">
-                        <button class="ql-bold"></button>
-                        <button class="ql-italic"></button>
-                        <button class="ql-underline"></button>
-                        <button class="ql-list" value="bullet"></button>
-                        <button class="ql-list" value="ordered"></button>
-                        <button class="ql-link"></button>
-                        <button class="ql-image"></button>
-                        <button class="ql-table"></button>
-                        <button class="ql-undo"></button>
-                        <button class="ql-redo"></button>
-                    </div>
-                    <div id="editor" class="h-32"></div>
-                </div>
-            </div>
-            <div class="flex flex-wrap space-x-2">
-                <button type="submit" class="bg-[#008080] text-white px-4 py-2 rounded">Send </button>
-                <button type="submit" class="bg-[red] text-white px-4 py-2 rounded">Discard </button>
-                <button type="submit" class="bg-[Gray] text-white px-4 py-2 rounded">Draft </button>
-            </div>
-        </div>
+                         <!-- Search Bar -->
+                        <div class="mt-4 mb-6">
+                            <input type="text" id="searchInput" placeholder="Search users..." class="w-full md:w-1/3 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                        </div>
+
+                        <!-- User Table -->
+                        <div class="bg-white p-6 rounded-lg shadow-lg overflow-x-auto">
+                            <table class="min-w-full" id="userTable">
+                                <thead>
+                                    <tr class="bg-gray-50">
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Name</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Contact</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Location</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Vehicle</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Duration</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Payment</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
+                                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-100">
+                                    <tr>
+                                        <td class="px-6 py-4">Joe </td>
+                                        <td class="px-6 py-4">9876543210</td>
+                                        <td class="px-6 py-4">Pokhara</td>
+                                        <td class="px-6 py-4">Car</td>
+                                        <td class="px-6 py-4">7 days</td>
+                                        <td class="px-6 py-4">unpaid</td>
+                                        <td class="px-6 py-4"><span class="px-2 py-1 text-sm bg-gray-100 text-green-800 rounded-full">Pending</span></td>
+                                        <td class="px-6 py-4">
+                                            <button class="text-blue-500 hover:text-blue-700">Edit</button>
+                                            <button class="text-red-500 hover:text-red-700 ml-2 delete-btn">Delete</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
+        
+</div>
+
     </div>
- <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-    <script>
-        var quill = new Quill('#editor', {
-            theme: 'snow',
-            modules: {
-                toolbar: '#toolbar'
-            }
-        });
-    </script>
 </body>
 </html>
